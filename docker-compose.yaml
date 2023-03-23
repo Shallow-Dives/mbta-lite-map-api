@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+    api:
+        build:
+            context: .
+            dockerfile: Dockerfile.prod
+        command: gunicorn wsgi:app --bind 0.0.0.0:8080 --log-level=debug --workers=4
+        volumes:
+            - .:/usr/src/app
+        ports:
+            - "8080:8080"
+        env_file:
+            -   ./.env
