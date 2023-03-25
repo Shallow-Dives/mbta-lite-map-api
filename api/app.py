@@ -1,7 +1,7 @@
 import os
 from functools import wraps
 
-from flask import Flask, Response, abort, request
+from flask import Flask, Response
 from flask_pydantic import validate
 
 from .errors import errors
@@ -17,9 +17,9 @@ from flask import abort, request
 def require_apikey(view_function):
     @wraps(view_function)
     def decorated_function(*args, **kwargs):
-        if request.headers.get('X-Api-Key') and request.headers.get('X-Api-Key') == os.environ.get(
-            "LITEMAP_API_KEY"
-        ):
+        if request.headers.get("X-Api-Key") and request.headers.get(
+            "X-Api-Key"
+        ) == os.environ.get("LITEMAP_API_KEY"):
             return view_function(*args, **kwargs)
         else:
             abort(401)

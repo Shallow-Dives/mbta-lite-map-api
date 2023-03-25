@@ -1,9 +1,6 @@
 import os
 
-from dotenv import load_dotenv
 from pymbta3 import Stops, Vehicles
-
-load_dotenv()
 
 
 def test_red_line_responsive():

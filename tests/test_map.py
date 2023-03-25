@@ -1,12 +1,8 @@
 import os
 
-from dotenv import load_dotenv
-
 from api.lite_map import map_train_leds
 
 from .rpi_configuration import overlay, station_order
-
-load_dotenv()
 
 
 def test_led_response():

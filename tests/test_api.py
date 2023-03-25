@@ -31,7 +31,10 @@ def test_validation(client):
     response = client.post(
         "/v1/train-mapping/leds",
         json=test_payload,
-        headers={"Content-Type": "application/json", "X-Api-Key": os.getenv("LITEMAP_API_KEY")},
+        headers={
+            "Content-Type": "application/json",
+            "X-Api-Key": os.getenv("LITEMAP_API_KEY"),
+        },
     )
 
     assert response.content_type == "application/json"
@@ -42,7 +45,10 @@ def test_validation(client):
     response = client.post(
         "/v1/train-mapping/leds",
         json=bad_payload,
-        headers={"Content-Type": "application/json", "X-Api-Key": os.getenv("LITEMAP_API_KEY")},
+        headers={
+            "Content-Type": "application/json",
+            "X-Api-Key": os.getenv("LITEMAP_API_KEY"),
+        },
     )
 
     assert response.status_code == 400
