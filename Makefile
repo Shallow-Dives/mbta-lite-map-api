@@ -1,5 +1,3 @@
-.PHONY: devel-install install format format-check devel-build devel-install test
-
 devel-install:
 	@pip install -r requirements.txt -r develop/requirements.txt
 

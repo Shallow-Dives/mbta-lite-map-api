@@ -1,7 +1,7 @@
 import os
 from functools import wraps
 
-from flask import Flask, Response
+from flask import Flask, Response, abort, request
 from flask_pydantic import validate
 
 from .errors import errors
@@ -11,7 +11,6 @@ from .stations import station_order
 
 app = Flask(__name__)
 app.register_blueprint(errors)
-from flask import abort, request
 
 
 def require_apikey(view_function):
