@@ -2,11 +2,21 @@
 
 API for [MBTA Lite Map Project]()
 
-This repo is built off of my [Deployable Flask API Template]().
-
 ## Develop workflow
 
+Makefile options:
+
+* `make devel-install`
+* `make format`
+* `make format-check`
+* `make devel-build`
+* `make devel-run`
+
 ## Deploy workflow
+
+`compose up` workflow
+
+deploy workflow
 
 ## Resources
 
